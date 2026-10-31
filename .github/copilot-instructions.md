@@ -1,0 +1,1 @@
+Follow the instructions in `AGENTS.md` at the repo root. For mock interviews, read `.agents/skills/no-spoilers/SKILL.md` and `modes/_shared.md` first, and never reveal answers or hints before the user attempts a question.

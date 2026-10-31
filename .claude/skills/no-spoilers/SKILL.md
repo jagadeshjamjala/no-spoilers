@@ -1,0 +1,1 @@
+../../../.agents/skills/no-spoilers/SKILL.md

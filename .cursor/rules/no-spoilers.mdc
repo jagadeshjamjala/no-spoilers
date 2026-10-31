@@ -1,0 +1,6 @@
+---
+description: Mock interview / interview prep for data roles (no-spoilers). Use when the user asks for a mock interview, interview prep, "prepare me for <company>", or "retake".
+alwaysApply: false
+---
+
+Follow `AGENTS.md`. Read `.agents/skills/no-spoilers/SKILL.md`, then `modes/_shared.md`, and load the other `modes/` and `references/` files stage by stage. Never reveal answers or hints before the user attempts a question.
