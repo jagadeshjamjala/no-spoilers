@@ -9,7 +9,7 @@ It's built for data engineers first, and also analytics engineers, data analysts
 ## 30-second demo
 
 ```
-you>  /mock Ledgerly senior data engineer — JD in examples/sample-jd-fintech-senior-de.md, interview in 5 days
+you>  mock interview for Ledgerly senior data engineer — JD in examples/sample-jd-fintech-senior-de.md, interview in 5 days
 coach> Ledgerly · Senior Data Engineer · full loop · 12 questions, one at a time. Level: senior ("5+ years…" [JD]). Good to go?
 you>  go
 coach> Q2 of 12 · SQL · core — `payment_attempts(...)`: retries share a payment_intent_id. Finance says the success rate is inflated…
@@ -35,7 +35,7 @@ See the full worked run in [`examples/sample-session.md`](examples/sample-sessio
 ```sh
 git clone <this-repo> no-spoilers && cd no-spoilers && claude
 ```
-Then type `/mock <company> <role>`, or just say "mock interview for …". The skill lives at `.claude/skills/no-spoilers/SKILL.md`, which is a symlink to `.agents/skills/no-spoilers/SKILL.md`. Run Claude Code from the repo root, because the skill loads `modes/` and `references/` from there.
+Then say "mock interview for <company> <role>" to interview in the terminal, or type `/mock <company> <role>` to do the setup and company research here, then take the interview in the web interview room. The skill lives at `.claude/skills/no-spoilers/SKILL.md`, which is a symlink to `.agents/skills/no-spoilers/SKILL.md`. Run Claude Code from the repo root, because the skill loads `modes/` and `references/` from there.
 
 **Codex CLI / OpenCode:** clone the repo and run the tool in the repo root. Both read `AGENTS.md` natively.
 
@@ -50,13 +50,16 @@ Then type `/mock <company> <role>`, or just say "mock interview for …". The sk
 - **ChatGPT:** for a one-off, paste it as your first message. For a custom GPT, upload it as a Knowledge file, because GPT instructions are capped at 8,000 characters. Then set the instructions to: "Follow PASTE-INTO-CHAT.md exactly. Never reveal answers before the user attempts a question."
 - **Gemini:** create a Gem and paste the file into its instructions, or paste it as your first message.
 
+**Web page (interview room):** `web/no-spoilers.html` is a chat page with the same skill built in. In Claude Code, type `/setup` once: it publishes the page as your own private claude.ai artifact and saves its link in `.no-spoilers-room.json` (gitignored). After that, `/mock` does the setup and research in the terminal and hands the interview to the page. The page saves each session to your account and downloads any session as HTML or Markdown. `./scripts/build-paste.sh` keeps its embedded copy of the skill in sync; run `/setup` again to republish it.
+
 Chats can't save files, so at the end you get a `SESSION SUMMARY` block. Save it, and paste it back with `retake` next time.
 
 ## Commands
 
 | Command | What it does |
 |---|---|
-| `/mock [company role]` | Start a new mock interview (Claude Code). Elsewhere, say "mock interview for …". |
+| `/setup` | One-time: publish your own private web interview room (Claude Code with the claude.ai artifacts connector). |
+| `/mock [company role]` | Setup and web research in the terminal, then the interview and debrief in the web interview room (Claude Code). To interview fully in the terminal, say "mock interview for …". |
 | `hint` | One nudge for the current question. It's logged, and the max score drops to 3. |
 | `skip` | Record no answer. The answer is revealed in the debrief. |
 | `repeat` | Restate the current question. |
