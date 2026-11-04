@@ -33,7 +33,7 @@ See the full worked run in [`examples/sample-session.md`](examples/sample-sessio
 
 **Claude Code**
 ```sh
-git clone <this-repo> no-spoilers && cd no-spoilers && claude
+git clone https://github.com/jagadeshjamjala/no-spoilers.git && cd no-spoilers && claude
 ```
 Then say "mock interview for <company> <role>" to interview in the terminal, or type `/mock <company> <role>` to do the setup and company research here, then take the interview in the web interview room. The skill lives at `.claude/skills/no-spoilers/SKILL.md`, which is a symlink to `.agents/skills/no-spoilers/SKILL.md`. Run Claude Code from the repo root, because the skill loads `modes/` and `references/` from there.
 
